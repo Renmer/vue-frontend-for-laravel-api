@@ -22,8 +22,9 @@
           v-for="item in peliculas"
           :key="item.name"
         >
-          <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.sinopsis }}</td>
+          <td>{{ item.estrellas }} <v-icon small></v-icon></td>
         </tr>
       </tbody>
     </template>
@@ -31,8 +32,7 @@
 </template>
 
 <script>
-
-
+//import { mdiStarCheckOutline } from '@mdi/js';
   export default {
     name: 'Home',
     data(){
@@ -40,8 +40,12 @@
         peliculas:[],
       }
     },
+    /*components:{
+      mdiStarCheckOutline
+    },*/
     mounted(){
-
+      this.axios.get('http://127.0.0.1:8000/api/peliculas')
+      .then(response => (this.peliculas = response.data))
     }
   }
 </script>

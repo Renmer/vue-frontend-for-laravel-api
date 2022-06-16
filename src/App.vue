@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    
+
     <v-app-bar app color="#BA0000" dark>
-      Vue + Vuetify
+      Vue + Vuetify + Laravel api
     </v-app-bar>
 
     <v-main>
